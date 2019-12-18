@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <AddEmployee :list="list"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AddEmployee from './components/AddEmployee.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  components: { AddEmployee },
+  data(){
+    return {
+      list: [
+        { name: 'Richard Henricks', email: 'richard@piedpiper.com' },
+        { name: 'Bertram Gilfoyle', email: 'gilfoyle@piedpiper.com' },
+        { name: 'Dinesh Chugtai', email: 'dinesh@piedpiper.com' }
+      ]
+    }
   }
 }
 </script>
@@ -21,7 +27,6 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
     margin-top: 60px;
   }
